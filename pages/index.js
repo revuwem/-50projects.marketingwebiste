@@ -17,9 +17,9 @@ export default function Home({ data }) {
     <Layout>
       <section className="hero">
         <h2>{hero.heading}</h2>
-        <p>Millions of people trust us with their business, so why you don’t</p>
-        <a href="#" className="btn btn--primary">
-          Start now
+        <p>{hero.text}</p>
+        <a href={hero.cta.url} className="btn btn--primary">
+          {hero.cta.label}
         </a>
         <img src="app.png" alt="" />
       </section>
@@ -84,19 +84,15 @@ export default function Home({ data }) {
       </section>
       <section className="trapdoor">
         <div className="left">
-          <h2>Ready to get started?</h2>
-          <p>
-            Learn payments or create an account instantly and start accepting
-            payments. You can also contact us to design a custom package for
-            your business
-          </p>
+          <h2>{trapdoor.heading}</h2>
+          <p>{trapdoor.text}</p>
         </div>
         <div className="right">
-          <a href="#" className="btn btn--primary">
-            Start Now
+          <a href={trapdoor.cta.url} className="btn btn--primary">
+            {trapdoor.cta.label}
           </a>
-          <a href="#" className="link">
-            Contact sales
+          <a href={trapdoor.secondaryAction.url} className="link">
+            {trapdoor.secondaryAction.label}
           </a>
         </div>
       </section>
