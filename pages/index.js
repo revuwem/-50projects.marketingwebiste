@@ -1,10 +1,22 @@
 import Layout from "../components/Layout";
+import { getLandingData } from "../lib/api";
 
-export default function Home() {
+export async function getStaticProps() {
+  const landingData = await getLandingData();
+  return {
+    props: {
+      data: landingData,
+    },
+  };
+}
+
+export default function Home({ data }) {
+  const { hero, trapdoor } = data.getLanding;
+
   return (
     <Layout>
       <section className="hero">
-        <h2>Provide digital transformation rapidly</h2>
+        <h2>{hero.heading}</h2>
         <p>Millions of people trust us with their business, so why you don’t</p>
         <a href="#" className="btn btn--primary">
           Start now
